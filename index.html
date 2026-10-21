@@ -122,7 +122,7 @@
     position:absolute;inset:0;z-index:0;
     background:
       linear-gradient(180deg,rgba(15,10,8,.35) 0%,rgba(15,10,8,.55) 60%,rgba(15,10,8,.85) 100%),
-      url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+      url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
   }
   .hero-bg::after{
     content:'';position:absolute;inset:0;
@@ -234,7 +234,6 @@
   .menu-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(43,29,22,.12)}
   .menu-card-img{
     aspect-ratio:4/3;overflow:hidden;position:relative;
-    background:linear-gradient(135deg,#F3EBDD,#E8DCC4);
   }
   .menu-card-img img{
     width:100%;height:100%;object-fit:cover;
@@ -340,7 +339,7 @@
   .reservations{
     background:
       linear-gradient(180deg,rgba(15,10,8,.75),rgba(15,10,8,.85)),
-      url('https://images.pexels.com/photos/1579739/pexels-photo-1579739.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat fixed;
+      url('https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat fixed;
     color:var(--ivory);
   }
   .reservations .section-head h2{color:var(--ivory)}
@@ -515,7 +514,7 @@
 <section class="story" id="story">
   <div class="story-grid">
     <div class="story-img reveal">
-      <img src="https://images.pexels.com/photos/1260998/pexels-photo-1260998.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Artisan coffee being poured in a Parisian café" />
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=85" alt="Artisan coffee being poured in a Parisian café" />
     </div>
     <div class="story-text reveal reveal-delay-1">
       <div class="eyebrow">Our Story</div>
@@ -566,7 +565,7 @@
 
   <div class="sig-row reveal">
     <div class="sig-img">
-      <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Signature espresso in a porcelain cup" />
+      <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=85" alt="Signature espresso in a porcelain cup" />
     </div>
     <div class="sig-text">
       <div class="eyebrow">— The Coffee</div>
@@ -583,7 +582,7 @@
 
   <div class="sig-row reverse reveal">
     <div class="sig-img">
-      <img src="https://images.pexels.com/photos/810819/pexels-photo-810819.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Freshly baked French croissant" />
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=85" alt="Freshly baked French croissant" />
     </div>
     <div class="sig-text">
       <div class="eyebrow">— The Pastry</div>
@@ -600,7 +599,7 @@
 
   <div class="sig-row reveal">
     <div class="sig-img">
-      <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Elegant French pâtisserie desserts" />
+      <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=1200&q=85" alt="Elegant French pâtisserie desserts" />
     </div>
     <div class="sig-text">
       <div class="eyebrow">— The Dessert</div>
@@ -720,8 +719,8 @@
     <div class="footer-col">
       <h4>Follow</h4>
       <ul>
-        <li><a href="#" aria-label="Instagram (placeholder)">Instagram</a></li>
-        <li><a href="#" aria-label="Pinterest (placeholder)">Pinterest</a></li>
+        <li><a href="#" aria-label="Instagram (placeholder)">Instagram </a></li>
+        <li><a href="#" aria-label="Pinterest (placeholder)">Pinterest </a></li>
         <li><a href="mailto:hello@noirandcreme.demo">hello@noirandcreme.demo</a></li>
       </ul>
     </div>
@@ -761,58 +760,31 @@
     navLinks.classList.remove('open');
   }));
 
-  /* ---------- FALLBACK IMAGE ---------- */
-  // Elegant SVG placeholder used when any image fails to load
-  const FALLBACK_IMG = "data:image/svg+xml;utf8," + encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">' +
-    '<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F3EBDD"/><stop offset="100%" stop-color="#E8DCC4"/></linearGradient></defs>' +
-    '<rect width="400" height="300" fill="url(#bg)"/>' +
-    '<line x1="150" y1="140" x2="250" y2="140" stroke="#B8976A" stroke-width="1"/>' +
-    '<text x="200" y="155" font-family="Cormorant Garamond, serif" font-size="18" fill="#B8976A" text-anchor="middle" letter-spacing="3">NOIR &amp; CRÈME</text>' +
-    '<line x1="150" y1="170" x2="250" y2="170" stroke="#B8976A" stroke-width="1"/>' +
-    '</svg>'
-  );
-
-  function makeSafeImg(src, alt){
-    const img=document.createElement('img');
-    img.alt=alt||'';
-    img.loading='lazy';
-    // Try primary source first
-    img.src=src;
-    // Fallback on error
-    img.addEventListener('error',function onErr(){
-      if(img.dataset.fb) return;
-      img.dataset.fb='1';
-      img.src=FALLBACK_IMG;
-    },{once:true});
-    return img;
-  }
-
-  /* ---------- MENU DATA (Pexels — reliable CDN for hotlinking) ---------- */
+  /* ---------- MENU DATA ---------- */
   const menuData={
     coffee:[
-      {name:'Noir Espresso',desc:'Our signature single-origin blend — dark chocolate, toasted almond, lingering caramel.',price:'$4.50',img:'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Café Crème',desc:'Velvety steamed milk poured over a double shot of our house espresso.',price:'$5.50',img:'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Cappuccino Classique',desc:'Equal parts espresso, steamed milk, and silk-soft foam — dusted with cocoa.',price:'$5.00',img:'https://images.pexels.com/photos/1260998/pexels-photo-1260998.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Café au Lait',desc:'A Parisian morning in a cup — strong coffee and warm milk, served in a wide bowl.',price:'$5.00',img:'https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Chocolat Chaud',desc:'Rich, slow-melted French dark chocolate with steamed milk and a whisper of vanilla.',price:'$6.00',img:'https://images.pexels.com/photos/1336544/pexels-photo-1336544.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Thé à la Menthe',desc:'Fresh Moroccan mint tea, poured from height into a delicate glass.',price:'$4.50',img:'https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=800'}
+      {name:'Noir Espresso',desc:'Our signature single-origin blend — dark chocolate, toasted almond, lingering caramel.',price:'$4.50',img:'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80'},
+      {name:'Café Crème',desc:'Velvety steamed milk poured over a double shot of our house espresso.',price:'$5.50',img:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80'},
+      {name:'Cappuccino Classique',desc:'Equal parts espresso, steamed milk, and silk-soft foam — dusted with cocoa.',price:'$5.00',img:'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80'},
+      {name:'Café au Lait',desc:'A Parisian morning in a cup — strong coffee and warm milk, served in a wide bowl.',price:'$5.00',img:'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80'},
+      {name:'Chocolat Chaud',desc:'Rich, slow-melted French dark chocolate with steamed milk and a whisper of vanilla.',price:'$6.00',img:'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=800&q=80'},
+      {name:'Thé à la Menthe',desc:'Fresh Moroccan mint tea, poured from height into a delicate glass.',price:'$4.50',img:'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80'}
     ],
     breakfast:[
-      {name:'Croissant & Confiture',desc:'Warm butter croissant with house-made strawberry confiture and cultured butter.',price:'$6.50',img:'https://images.pexels.com/photos/810819/pexels-photo-810819.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Tartine Avocat',desc:'Sourdough tartine with smashed avocado, poached egg, radish, and micro herbs.',price:'$12.00',img:'https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Oeufs Bénédicte',desc:'Poached eggs on brioche, smoked salmon, and a delicate hollandaise.',price:'$14.00',img:'https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Granola Maison',desc:'House-toasted granola with Greek yoghurt, seasonal fruit, and honey.',price:'$9.50',img:'https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Pain Perdu',desc:'Brioche French toast with caramelised banana, crème fraîche, and maple.',price:'$11.00',img:'https://images.pexels.com/photos/1352183/pexels-photo-1352183.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Assiette du Matin',desc:'A curated morning plate — pastry, fruit, yoghurt, and your choice of coffee.',price:'$16.00',img:'https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=800'}
+      {name:'Croissant & Confiture',desc:'Warm butter croissant with house-made strawberry confiture and cultured butter.',price:'$6.50',img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80'},
+      {name:'Tartine Avocat',desc:'Sourdough tartine with smashed avocado, poached egg, radish, and micro herbs.',price:'$12.00',img:'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80'},
+      {name:'Oeufs Bénédicte',desc:'Poached eggs on brioche, smoked salmon, and a delicate hollandaise.',price:'$14.00',img:'https://images.unsplash.com/photo-1608039829572-9b0189e0c1f6?auto=format&fit=crop&w=800&q=80'},
+      {name:'Granola Maison',desc:'House-toasted granola with Greek yoghurt, seasonal fruit, and honey.',price:'$9.50',img:'https://images.unsplash.com/photo-1517093705437-305be02f8e1a?auto=format&fit=crop&w=800&q=80'},
+      {name:'Pain Perdu',desc:'Brioche French toast with caramelised banana, crème fraîche, and maple.',price:'$11.00',img:'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80'},
+      {name:'Assiette du Matin',desc:'A curated morning plate — pastry, fruit, yoghurt, and your choice of coffee.',price:'$16.00',img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80'}
     ],
     patisserie:[
-      {name:'Tarte au Citron',desc:'A crisp pastry shell filled with bright lemon curd and torched meringue.',price:'$7.00',img:'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Paris-Brest',desc:'Choux pastry ring filled with hazelnut praline cream — a French classic.',price:'$8.00',img:'https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Mille-Feuille Vanille',desc:'Crisp puff pastry layered with vanilla bean pastry cream and fondant.',price:'$7.50',img:'https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Éclair au Chocolat',desc:'Light choux filled with dark chocolate crème pâtissière, glazed to shine.',price:'$6.50',img:'https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Macaron Collection',desc:'Six hand-piped macarons — pistachio, rose, salted caramel, and more.',price:'$9.00',img:'https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=800'},
-      {name:'Tarte Tatin',desc:'Caramelised upside-down apple tart, served warm with crème fraîche.',price:'$8.50',img:'https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=800'}
+      {name:'Tarte au Citron',desc:'A crisp pastry shell filled with bright lemon curd and torched meringue.',price:'$7.00',img:'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=800&q=80'},
+      {name:'Paris-Brest',desc:'Choux pastry ring filled with hazelnut praline cream — a French classic.',price:'$8.00',img:'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=800&q=80'},
+      {name:'Mille-Feuille Vanille',desc:'Crisp puff pastry layered with vanilla bean pastry cream and fondant.',price:'$7.50',img:'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80'},
+      {name:'Éclair au Chocolat',desc:'Light choux filled with dark chocolate crème pâtissière, glazed to shine.',price:'$6.50',img:'https://images.unsplash.com/photo-1612201142855-7873bc1c6bfe?auto=format&fit=crop&w=800&q=80'},
+      {name:'Macaron Collection',desc:'Six hand-piped macarons — pistachio, rose, salted caramel, and more.',price:'$9.00',img:'https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=800&q=80'},
+      {name:'Tarte Tatin',desc:'Caramelised upside-down apple tart, served warm with crème fraîche.',price:'$8.50',img:'https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?auto=format&fit=crop&w=800&q=80'}
     ]
   };
 
@@ -823,11 +795,8 @@
     menuData[cat].forEach(item=>{
       const card=document.createElement('article');
       card.className='menu-card';
-      const imgWrap=document.createElement('div');
-      imgWrap.className='menu-card-img';
-      const img=makeSafeImg(item.img,item.name);
-      imgWrap.appendChild(img);
       card.innerHTML=`
+        <div class="menu-card-img"><img src="${item.img}" alt="${item.name}" loading="lazy"/></div>
         <div class="menu-card-body">
           <div class="menu-card-head">
             <h3>${item.name}</h3>
@@ -835,7 +804,6 @@
           </div>
           <p>${item.desc}</p>
         </div>`;
-      card.insertBefore(imgWrap,card.firstChild);
       grid.appendChild(card);
     });
   }
@@ -857,25 +825,20 @@
 
   /* ---------- GALLERY ---------- */
   const galleryData=[
-    {src:'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1200',caption:'Morning light on marble',cls:'tall'},
-    {src:'https://images.pexels.com/photos/1260998/pexels-photo-1260998.jpeg?auto=compress&cs=tinysrgb&w=1200',caption:'The ritual of coffee',cls:''},
-    {src:'https://images.pexels.com/photos/810819/pexels-photo-810819.jpeg?auto=compress&cs=tinysrgb&w=1200',caption:'Fresh from the oven',cls:'wide'},
-    {src:'https://images.pexels.com/photos/1579739/pexels-photo-1579739.jpeg?auto=compress&cs=tinysrgb&w=1200',caption:'Café interior',cls:''},
-    {src:'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1200',caption:'Quiet corners',cls:'tall'},
-    {src:'https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=1200',caption:'Tarte du jour',cls:''},
-    {src:'https://images.pexels.com/photos/1336544/pexels-photo-1336544.jpeg?auto=compress&cs=tinysrgb&w=1200',caption:'Macarons',cls:''},
-    {src:'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=1200',caption:'Latte art',cls:'wide'}
+    {src:'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=85',caption:'Morning light on marble',cls:'tall'},
+    {src:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85',caption:'The ritual of coffee',cls:''},
+    {src:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=85',caption:'Fresh from the oven',cls:'wide'},
+    {src:'https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=85',caption:'Café interior',cls:''},
+    {src:'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=85',caption:'Quiet corners',cls:'tall'},
+    {src:'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=800&q=85',caption:'Tarte du jour',cls:''},
+    {src:'https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=800&q=85',caption:'Macarons',cls:''},
+    {src:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85',caption:'Latte art',cls:'wide'}
   ];
   const galleryGrid=document.getElementById('galleryGrid');
   galleryData.forEach(g=>{
     const item=document.createElement('div');
     item.className='gallery-item '+g.cls;
-    const img=makeSafeImg(g.src,g.caption);
-    const cap=document.createElement('div');
-    cap.className='caption';
-    cap.textContent=g.caption;
-    item.appendChild(img);
-    item.appendChild(cap);
+    item.innerHTML=`<img src="${g.src}" alt="${g.caption}" loading="lazy"/><div class="caption">${g.caption}</div>`;
     item.addEventListener('click',()=>openLightbox(g.src,g.caption));
     galleryGrid.appendChild(item);
   });
@@ -884,14 +847,8 @@
   const lightbox=document.getElementById('lightbox');
   const lightboxImg=document.getElementById('lightboxImg');
   function openLightbox(src,alt){
-    lightboxImg.alt=alt;
     lightboxImg.src=src;
-    // Re-attach fallback for lightbox image
-    lightboxImg.addEventListener('error',function onErr(){
-      if(lightboxImg.dataset.fb) return;
-      lightboxImg.dataset.fb='1';
-      lightboxImg.src=FALLBACK_IMG;
-    },{once:true});
+    lightboxImg.alt=alt;
     lightbox.classList.add('open');
     document.body.style.overflow='hidden';
   }

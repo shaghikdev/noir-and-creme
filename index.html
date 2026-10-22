@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+
+                
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -9,7 +24,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  /* ---------- RESET & BASE ---------- */
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
@@ -24,10 +38,6 @@
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   button{font-family:inherit;cursor:pointer;border:none;background:none}
-
-  /* ---------- TYPOGRAPHY ---------- */
-  .serif{font-family:'Cormorant Garamond','Playfair Display',serif}
-  .display{font-family:'Playfair Display','Cormorant Garamond',serif}
   h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:-.01em;line-height:1.15}
   .eyebrow{
     font-family:'DM Sans',sans-serif;
@@ -38,8 +48,6 @@
     content:'';display:inline-block;width:32px;height:1px;background:#B8976A;
     vertical-align:middle;margin-right:14px;
   }
-
-  /* ---------- COLORS ---------- */
   :root{
     --ivory:#FAF6EF;
     --cream:#F3EBDD;
@@ -50,8 +58,6 @@
     --gold-deep:#9C7E54;
     --muted:#6B5B4F;
   }
-
-  /* ---------- LOADER ---------- */
   .loader{
     position:fixed;inset:0;background:var(--ivory);z-index:9999;
     display:flex;align-items:center;justify-content:center;
@@ -64,8 +70,6 @@
     animation:fadePulse 1.6s ease-in-out infinite;
   }
   @keyframes fadePulse{0%,100%{opacity:.3}50%{opacity:1}}
-
-  /* ---------- NAV ---------- */
   .nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
     padding:26px 56px;display:flex;align-items:center;justify-content:space-between;
@@ -110,8 +114,6 @@
   .menu-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
   .menu-toggle.open span:nth-child(2){opacity:0}
   .menu-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-  /* ---------- HERO ---------- */
   .hero{
     min-height:100vh;position:relative;
     display:grid;grid-template-columns:1fr;align-items:center;
@@ -167,8 +169,6 @@
   }
   @keyframes scrollLine{0%,100%{transform:scaleY(.3);transform-origin:top}50%{transform:scaleY(1)}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-
-  /* ---------- SECTIONS ---------- */
   section{padding:140px 56px;position:relative}
   .section-head{max-width:760px;margin:0 auto 80px;text-align:center}
   .section-head .eyebrow{margin-bottom:22px}
@@ -178,8 +178,6 @@
   }
   .section-head h2 em{font-style:italic;color:var(--gold)}
   .section-head p{color:var(--muted);font-size:16px;line-height:1.8}
-
-  /* ---------- STORY ---------- */
   .story{background:var(--ivory)}
   .story-grid{
     display:grid;grid-template-columns:1fr 1.1fr;gap:90px;align-items:center;
@@ -209,8 +207,6 @@
     font-family:'Cormorant Garamond',serif;font-style:italic;
     font-size:22px;color:var(--espresso);
   }
-
-  /* ---------- MENU ---------- */
   .menu{background:linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%)}
   .menu-tabs{
     display:flex;justify-content:center;gap:10px;margin-bottom:60px;flex-wrap:wrap;
@@ -234,6 +230,7 @@
   .menu-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(43,29,22,.12)}
   .menu-card-img{
     aspect-ratio:4/3;overflow:hidden;position:relative;
+    background:linear-gradient(135deg,#F3EBDD,#E8DCC4);
   }
   .menu-card-img img{
     width:100%;height:100%;object-fit:cover;
@@ -250,8 +247,6 @@
   .menu-card-body p{color:var(--muted);font-size:14px;line-height:1.7}
   .menu-panel{display:none;animation:fadeUp .6s ease}
   .menu-panel.active{display:block}
-
-  /* ---------- SIGNATURE ---------- */
   .signature{background:var(--ivory);padding:160px 56px}
   .sig-row{
     display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;
@@ -282,8 +277,6 @@
   }
   .sig-meta div{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .sig-meta div strong{display:block;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--espresso);letter-spacing:0;text-transform:none;margin-top:4px;font-weight:500}
-
-  /* ---------- GALLERY ---------- */
   .gallery{background:var(--cream);padding:140px 56px}
   .gallery-grid{
     display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;
@@ -311,8 +304,6 @@
     z-index:2;opacity:0;transform:translateY(10px);transition:all .4s;
   }
   .gallery-item:hover .caption{opacity:1;transform:translateY(0)}
-
-  /* Lightbox */
   .lightbox{
     position:fixed;inset:0;z-index:200;
     background:rgba(15,10,8,.95);
@@ -334,8 +325,6 @@
     transition:all .3s;
   }
   .lightbox-close:hover{background:var(--ivory);color:var(--espresso)}
-
-  /* ---------- RESERVATIONS ---------- */
   .reservations{
     background:
       linear-gradient(180deg,rgba(15,10,8,.75),rgba(15,10,8,.85)),
@@ -391,8 +380,6 @@
   }
   .form-confirm h3{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--ivory);margin-bottom:14px;font-weight:400}
   .form-confirm p{color:rgba(250,246,239,.75);font-size:15px;line-height:1.7;max-width:460px;margin:0 auto}
-
-  /* ---------- FOOTER ---------- */
   footer{
     background:var(--black);color:rgba(250,246,239,.65);
     padding:100px 56px 40px;
@@ -424,15 +411,11 @@
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;
     font-size:12px;color:rgba(250,246,239,.45);letter-spacing:.1em;
   }
-
-  /* ---------- REVEAL ---------- */
   .reveal{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
   .reveal-delay-1{transition-delay:.15s}
   .reveal-delay-2{transition-delay:.3s}
   .reveal-delay-3{transition-delay:.45s}
-
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width:1024px){
     section{padding:100px 40px}
     .nav{padding:22px 30px}
@@ -479,7 +462,6 @@
 
 <div class="loader" id="loader"><div class="loader-mark">NOIR & CRÈME</div></div>
 
-<!-- NAV -->
 <nav class="nav" id="nav">
   <a href="#home" class="nav-logo">NOIR <em>&</em> CRÈME</a>
   <div class="nav-links" id="navLinks">
@@ -495,7 +477,6 @@
   </button>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-content">
@@ -510,7 +491,6 @@
   <div class="hero-scroll">Scroll</div>
 </section>
 
-<!-- STORY -->
 <section class="story" id="story">
   <div class="story-grid">
     <div class="story-img reveal">
@@ -527,7 +507,6 @@
   </div>
 </section>
 
-<!-- MENU -->
 <section class="menu" id="menu">
   <div class="section-head reveal">
     <div class="eyebrow">The Menu</div>
@@ -541,21 +520,17 @@
     <button class="menu-tab" data-cat="patisserie">French Pâtisserie</button>
   </div>
 
-  <!-- COFFEE -->
   <div class="menu-panel active" id="panel-coffee">
     <div class="menu-grid" id="grid-coffee"></div>
   </div>
-  <!-- BREAKFAST -->
   <div class="menu-panel" id="panel-breakfast">
     <div class="menu-grid" id="grid-breakfast"></div>
   </div>
-  <!-- PATISSERIE -->
   <div class="menu-panel" id="panel-patisserie">
     <div class="menu-grid" id="grid-patisserie"></div>
   </div>
 </section>
 
-<!-- SIGNATURE -->
 <section class="signature">
   <div class="section-head reveal">
     <div class="eyebrow">Signature</div>
@@ -614,7 +589,6 @@
   </div>
 </section>
 
-<!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="section-head reveal">
     <div class="eyebrow">Gallery</div>
@@ -624,7 +598,6 @@
   <div class="gallery-grid reveal" id="galleryGrid"></div>
 </section>
 
-<!-- RESERVATIONS -->
 <section class="reservations" id="reservations">
   <div class="section-head reveal">
     <div class="eyebrow">Reservations</div>
@@ -691,7 +664,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -719,8 +691,8 @@
     <div class="footer-col">
       <h4>Follow</h4>
       <ul>
-        <li><a href="#" aria-label="Instagram (placeholder)">Instagram </a></li>
-        <li><a href="#" aria-label="Pinterest (placeholder)">Pinterest </a></li>
+        <li><a href="#" aria-label="Instagram (placeholder)">Instagram</a></li>
+        <li><a href="#" aria-label="Pinterest (placeholder)">Pinterest</a></li>
         <li><a href="mailto:hello@noirandcreme.demo">hello@noirandcreme.demo</a></li>
       </ul>
     </div>
@@ -731,19 +703,16 @@
   </div>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
   <img id="lightboxImg" src="" alt="" />
 </div>
 
 <script>
-  /* ---------- LOADER ---------- */
   window.addEventListener('load',()=>{
     setTimeout(()=>document.getElementById('loader').classList.add('hidden'),500);
   });
 
-  /* ---------- NAV ---------- */
   const nav=document.getElementById('nav');
   window.addEventListener('scroll',()=>{
     nav.classList.toggle('scrolled',window.scrollY>60);
@@ -760,7 +729,38 @@
     navLinks.classList.remove('open');
   }));
 
-  /* ---------- MENU DATA ---------- */
+  /* ---------- FALLBACK IMAGE ---------- */
+  const FALLBACK_IMG = "data:image/svg+xml;utf8," + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">' +
+    '<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F3EBDD"/><stop offset="100%" stop-color="#E8DCC4"/></linearGradient></defs>' +
+    '<rect width="400" height="300" fill="url(#bg)"/>' +
+    '<line x1="150" y1="140" x2="250" y2="140" stroke="#B8976A" stroke-width="1"/>' +
+    '<text x="200" y="155" font-family="Cormorant Garamond, serif" font-size="18" fill="#B8976A" text-anchor="middle" letter-spacing="3">NOIR &amp; CRÈME</text>' +
+    '<line x1="150" y1="170" x2="250" y2="170" stroke="#B8976A" stroke-width="1"/>' +
+    '</svg>'
+  );
+
+  function makeSafeImg(src, alt){
+    const img=document.createElement('img');
+    img.alt=alt||'';
+    img.loading='lazy';
+    img.src=src;
+    img.addEventListener('error',function onErr(){
+      if(img.dataset.fb) return;
+      img.dataset.fb='1';
+      img.src=FALLBACK_IMG;
+    },{once:true});
+    return img;
+  }
+
+  /* ============================================================
+     MENU DATA
+     - Éclair au Chocolat  → your Shopify photo
+     - Granola Maison      → your Shopify photo
+     - Oeufs Bénédicte     → kept existing Unsplash photo
+       (no dedicated URL was provided — the third URL you pasted
+        was a duplicate of the éclair one)
+     ============================================================ */
   const menuData={
     coffee:[
       {name:'Noir Espresso',desc:'Our signature single-origin blend — dark chocolate, toasted almond, lingering caramel.',price:'$4.50',img:'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80'},
@@ -774,7 +774,7 @@
       {name:'Croissant & Confiture',desc:'Warm butter croissant with house-made strawberry confiture and cultured butter.',price:'$6.50',img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80'},
       {name:'Tartine Avocat',desc:'Sourdough tartine with smashed avocado, poached egg, radish, and micro herbs.',price:'$12.00',img:'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80'},
       {name:'Oeufs Bénédicte',desc:'Poached eggs on brioche, smoked salmon, and a delicate hollandaise.',price:'$14.00',img:'https://images.unsplash.com/photo-1608039829572-9b0189e0c1f6?auto=format&fit=crop&w=800&q=80'},
-      {name:'Granola Maison',desc:'House-toasted granola with Greek yoghurt, seasonal fruit, and honey.',price:'$9.50',img:'https://images.unsplash.com/photo-1517093705437-305be02f8e1a?auto=format&fit=crop&w=800&q=80'},
+      {name:'Granola Maison',desc:'House-toasted granola with Greek yoghurt, seasonal fruit, and honey.',price:'$9.50',img:'https://cdn.shopify.com/s/files/1/0798/3559/4923/files/granola-maison.jpg?v=1792581150'},
       {name:'Pain Perdu',desc:'Brioche French toast with caramelised banana, crème fraîche, and maple.',price:'$11.00',img:'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80'},
       {name:'Assiette du Matin',desc:'A curated morning plate — pastry, fruit, yoghurt, and your choice of coffee.',price:'$16.00',img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80'}
     ],
@@ -782,21 +782,23 @@
       {name:'Tarte au Citron',desc:'A crisp pastry shell filled with bright lemon curd and torched meringue.',price:'$7.00',img:'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=800&q=80'},
       {name:'Paris-Brest',desc:'Choux pastry ring filled with hazelnut praline cream — a French classic.',price:'$8.00',img:'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=800&q=80'},
       {name:'Mille-Feuille Vanille',desc:'Crisp puff pastry layered with vanilla bean pastry cream and fondant.',price:'$7.50',img:'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80'},
-      {name:'Éclair au Chocolat',desc:'Light choux filled with dark chocolate crème pâtissière, glazed to shine.',price:'$6.50',img:'https://images.unsplash.com/photo-1612201142855-7873bc1c6bfe?auto=format&fit=crop&w=800&q=80'},
+      {name:'Éclair au Chocolat',desc:'Light choux filled with dark chocolate crème pâtissière, glazed to shine.',price:'$6.50',img:'https://cdn.shopify.com/s/files/1/0798/3559/4923/files/eclair-au-chocolat.jpg?v=1792581150'},
       {name:'Macaron Collection',desc:'Six hand-piped macarons — pistachio, rose, salted caramel, and more.',price:'$9.00',img:'https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=800&q=80'},
       {name:'Tarte Tatin',desc:'Caramelised upside-down apple tart, served warm with crème fraîche.',price:'$8.50',img:'https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?auto=format&fit=crop&w=800&q=80'}
     ]
   };
 
-  /* ---------- RENDER MENU ---------- */
   function renderMenu(cat){
     const grid=document.getElementById('grid-'+cat);
     if(grid.children.length>0) return;
     menuData[cat].forEach(item=>{
       const card=document.createElement('article');
       card.className='menu-card';
+      const imgWrap=document.createElement('div');
+      imgWrap.className='menu-card-img';
+      const img=makeSafeImg(item.img,item.name);
+      imgWrap.appendChild(img);
       card.innerHTML=`
-        <div class="menu-card-img"><img src="${item.img}" alt="${item.name}" loading="lazy"/></div>
         <div class="menu-card-body">
           <div class="menu-card-head">
             <h3>${item.name}</h3>
@@ -804,12 +806,12 @@
           </div>
           <p>${item.desc}</p>
         </div>`;
+      card.insertBefore(imgWrap,card.firstChild);
       grid.appendChild(card);
     });
   }
   renderMenu('coffee');
 
-  /* ---------- MENU TABS ---------- */
   const tabs=document.querySelectorAll('.menu-tab');
   const panels=document.querySelectorAll('.menu-panel');
   tabs.forEach(tab=>{
@@ -823,7 +825,6 @@
     });
   });
 
-  /* ---------- GALLERY ---------- */
   const galleryData=[
     {src:'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=85',caption:'Morning light on marble',cls:'tall'},
     {src:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85',caption:'The ritual of coffee',cls:''},
@@ -838,17 +839,26 @@
   galleryData.forEach(g=>{
     const item=document.createElement('div');
     item.className='gallery-item '+g.cls;
-    item.innerHTML=`<img src="${g.src}" alt="${g.caption}" loading="lazy"/><div class="caption">${g.caption}</div>`;
+    const img=makeSafeImg(g.src,g.caption);
+    const cap=document.createElement('div');
+    cap.className='caption';
+    cap.textContent=g.caption;
+    item.appendChild(img);
+    item.appendChild(cap);
     item.addEventListener('click',()=>openLightbox(g.src,g.caption));
     galleryGrid.appendChild(item);
   });
 
-  /* ---------- LIGHTBOX ---------- */
   const lightbox=document.getElementById('lightbox');
   const lightboxImg=document.getElementById('lightboxImg');
   function openLightbox(src,alt){
-    lightboxImg.src=src;
     lightboxImg.alt=alt;
+    lightboxImg.src=src;
+    lightboxImg.addEventListener('error',function onErr(){
+      if(lightboxImg.dataset.fb) return;
+      lightboxImg.dataset.fb='1';
+      lightboxImg.src=FALLBACK_IMG;
+    },{once:true});
     lightbox.classList.add('open');
     document.body.style.overflow='hidden';
   }
@@ -860,7 +870,6 @@
   lightbox.addEventListener('click',(e)=>{if(e.target===lightbox)closeLightbox()});
   document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeLightbox()});
 
-  /* ---------- RESERVATION FORM ---------- */
   const form=document.getElementById('bookingForm');
   const confirm=document.getElementById('formConfirm');
   form.addEventListener('submit',(e)=>{
@@ -873,7 +882,6 @@
     confirm.classList.add('show');
   });
 
-  /* ---------- REVEAL ON SCROLL ---------- */
   const io=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
@@ -884,7 +892,6 @@
   },{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  /* ---------- PARALLAX HERO ---------- */
   const heroBg=document.querySelector('.hero-bg');
   window.addEventListener('scroll',()=>{
     const y=window.scrollY;
@@ -895,3 +902,13 @@
 </script>
 </body>
 </html>
+
+
+              <script>
+                              {name:'Oeufs Bénédicte',desc:'...',price:'$14.00',img:'https://images.unsplash.com/...'}
+
+
+              </script>
+                        </body>
+                        </html>
+                    
